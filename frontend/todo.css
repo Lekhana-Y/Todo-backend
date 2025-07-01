@@ -1,0 +1,88 @@
+/* Root theme variables */
+:root {
+  --bg-color: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+  --text-color: #333;
+  --item-bg: #ffffffcc;
+  --item-hover: #f0f0f0;
+  --completed-bg: #d4edda;
+}
+
+body.dark-mode {
+  --bg-color: linear-gradient(135deg, #121212, #1e1e1e);
+  --text-color: #f0f0f0;
+  --item-bg: #2a2a2a;
+  --item-hover: #3b3b3b;
+  --completed-bg: #294036;
+}
+
+/* Body and layout */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styling */
+.todo-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 30px;
+  background: var(--item-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: background 0.4s ease;
+}
+
+/* Individual item */
+.todo-item {
+  background: var(--item-bg);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.4s, transform 0.2s ease;
+}
+
+/* Hover effect */
+.todo-item:hover {
+  background: var(--item-hover);
+  transform: scale(1.01);
+}
+
+/* Completed task highlight */
+.todo-item.completed {
+  background: var(--completed-bg);
+}
+
+/* Completed text */
+.todo-item span.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Action buttons */
+.todo-actions button {
+  margin-left: 8px;
+}
+
+/* Dark/light toggle */
+.toggle-mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .todo-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}
